@@ -27,3 +27,5 @@ This project is made so all the elements are displayed correctly on popular scre
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 
 Good luck and have fun!
+
+![alt text](<Screenshot 2024-09-08 094010.png>) ![alt text](<Screenshot 2024-09-08 094036.png>) ![alt text](<Screenshot 2024-09-08 094121.png>) ![alt text](<Screenshot 2024-09-08 094135.png>) ![alt text](<Screenshot 2024-09-08 094156.png>)
