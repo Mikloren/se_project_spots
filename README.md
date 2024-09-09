@@ -31,3 +31,9 @@ Good luck and have fun!
 ![alt text](<Screenshot 2024-09-08 094010.png>) ![alt text](<Screenshot 2024-09-08 094036.png>) ![alt text](<Screenshot 2024-09-08 094121.png>) ![alt text](<Screenshot 2024-09-08 094135.png>) ![alt text](<Screenshot 2024-09-08 094156.png>)
 
 [video](https://drive.google.com/file/d/1oryGerpCojlTT6_0ti3ASi50FSJNadec/view?usp=sharing)
+
+## Deployment
+
+This webpage is deployed to GitHub pages
+
+- Deployment Link:https://mikloren.github.io/se_project_spots/
