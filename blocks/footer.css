@@ -3,15 +3,11 @@
   background-color: rgba(252, 245, 229, 1);
   display: flex;
   justify-content: center;
-}
-
-.footer__content {
   text-wrap: nowrap;
-  width: 104px;
-  height: 16px;
 }
 
 .footer__text {
+  margin: 0;
   color: rgba(33, 33, 33, 0.7);
   font-weight: 400;
   font-size: 16px;
