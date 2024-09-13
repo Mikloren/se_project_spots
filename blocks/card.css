@@ -39,25 +39,24 @@
 }
 
 @media screen and (max-width: 627px) {
-  .card {
-    width: 100%;
-  }
-
   .card__image {
     height: 288px;
   }
 
-  .card__content {
-    align-items: center;
-  }
-
   .card__title {
+    padding-left: 2px;
     font-size: 16px;
     line-height: 1;
-    padding-left: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-width: 288px;
+    height: 18px;
   }
 
   .card__like-btn {
-    padding-right: 22px;
+    padding-right: 20px;
   }
 }

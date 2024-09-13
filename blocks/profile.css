@@ -64,7 +64,7 @@
 }
 
 .profile__edit-btn:hover {
-  opacity: 0.7;
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .profile__add-btn:hover {
-  opacity: 0.7;
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -106,6 +106,7 @@
 
   .profile__avatar {
     margin: 0 0 12px;
+
     height: 80px;
     width: 80px;
   }
