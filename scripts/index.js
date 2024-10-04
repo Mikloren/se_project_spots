@@ -40,29 +40,29 @@ const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
 function getCardElement(data) {
-  const CardElement = cardTemplate.content
+  const cardElement = cardTemplate.content
     .querySelector(".card")
     .cloneNode(true);
 
-  const CardNameEl = CardElement.querySelector(".card__title");
-  const cardImage = CardElement.querySelector(".card__image");
+  const cardNameEl = cardElement.querySelector(".card__title");
+  const cardImage = cardElement.querySelector(".card__image");
 
-  CardNameEl.textContent = data.name;
+  cardNameEl.textContent = data.name;
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
 
-  return CardElement;
+  return cardElement;
 }
 
 function openModal() {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
-  editModal.classList.add("modal__opened");
+  editModal.classList.add("modal_opened");
 }
 
 function closeModal() {
-  editModal.classList.remove("modal__opened");
+  editModal.classList.remove("modal_opened");
 }
 
 function handleEditFormSubmit(evt) {
@@ -77,6 +77,6 @@ editModalCloseBtn.addEventListener("click", closeModal);
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 for (let i = 0; i < initialCards.length; i++) {
-  const CardElement = getCardElement(initialCards[i]);
-  cardsList.prepend(CardElement);
+  const cardElement = getCardElement(initialCards[i]);
+  cardsList.prepend(cardElement);
 }
