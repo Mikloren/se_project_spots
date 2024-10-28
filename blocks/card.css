@@ -1,3 +1,7 @@
+.card {
+  position: relative;
+}
+
 .card__image {
   height: 413px;
   width: 100%;
@@ -5,6 +9,10 @@
   display: block;
   border-radius: 8px;
   margin-bottom: 10px;
+}
+
+.card__image:hover {
+  cursor: pointer;
 }
 
 .card__content {
@@ -39,6 +47,35 @@
 
 .card__like-btn:hover {
   opacity: 1;
+  cursor: pointer;
+}
+
+.card__like-btn_liked {
+  background-image: url("../images/State=Liked.svg");
+  opacity: 1;
+}
+
+.card__like-btn_liked:hover {
+  background-image: url("../images/State=State4.svg");
+}
+
+.card__delete-btn {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: transparent url("../images/State=Default.svg");
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 10px;
+  left: 371px;
+  transition: 0.5s ease-in;
+  border: none;
+  z-index: 1;
+}
+
+.card__delete-btn:hover {
+  background-image: url("../images/State=Hover.svg");
   cursor: pointer;
 }
 
