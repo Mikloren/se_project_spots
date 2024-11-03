@@ -50,18 +50,20 @@
 }
 
 .modal__caption {
+  position: relative;
+  max-width: 135px;
   text-align: center;
   text-wrap: nowrap;
   background: rgba(33, 33, 33, 1);
   color: rgba(255, 255, 255, 1);
   box-sizing: border-box;
-  max-width: 214px;
   border-radius: 8px;
   padding: 4px 8px 4px;
   margin: 4px 0 0;
   font-size: 20px;
   line-height: 24px;
   font-weight: 500;
+  left: 108px;
 }
 
 .modal__close-btn {
@@ -79,8 +81,11 @@
 
 .modal__close-btn_type_preview {
   background: transparent url(../images/Close\ Icon\ 2.svg);
-  top: 0;
-  right: -52.5px;
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  top: 40px;
+  left: 640px;
   opacity: 1;
   height: 40px;
   width: 40px;
@@ -164,5 +169,25 @@
 
   .modal__submit-btn {
     width: 100%;
+  }
+
+  .modal__image {
+    max-width: 288px;
+    max-height: 426.57px;
+    border-radius: 4px;
+  }
+
+  .modal__caption {
+    width: 111px;
+    height: 27px;
+    font-size: 16px;
+    line-height: 19.2px;
+    top: 0;
+    left: 0px;
+  }
+
+  .modal__close-btn_type_preview {
+    top: 0;
+    left: 236px;
   }
 }

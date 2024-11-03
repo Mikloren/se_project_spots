@@ -73,6 +73,7 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(cardModal);
+  evt.target.reset();
 }
 
 function getCardElement(data) {
@@ -95,12 +96,12 @@ function getCardElement(data) {
   cardImage.addEventListener("click", () => {
     openModal(previewModal);
     previewModalImage.src = data.link;
+    previewModalImage.alt = data.name;
     previewModalCaption.textContent = data.name;
-    previewModalCaption.alt = data.name;
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-    cardElement.remove(".card__image");
+    cardElement.remove();
   });
 
   return cardElement;
