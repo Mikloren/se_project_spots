@@ -63,7 +63,7 @@
   font-size: 20px;
   line-height: 24px;
   font-weight: 500;
-  left: 108px;
+  left: 0px;
 }
 
 .modal__close-btn {
@@ -85,7 +85,7 @@
   padding: 0;
   margin: 0 auto;
   top: 40px;
-  left: 640px;
+  left: 750px;
   opacity: 1;
   height: 40px;
   width: 40px;
@@ -171,6 +171,11 @@
     width: 100%;
   }
 
+  .modal__container_type_preview {
+    padding: 0;
+    right: -6px;
+  }
+
   .modal__image {
     max-width: 288px;
     max-height: 426.57px;
@@ -188,6 +193,6 @@
 
   .modal__close-btn_type_preview {
     top: 0;
-    left: 236px;
+    left: 248px;
   }
 }
