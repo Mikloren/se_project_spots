@@ -50,8 +50,8 @@
 }
 
 .modal__caption {
-  position: relative;
-  max-width: 135px;
+  display: inline;
+  position: absolute;
   text-align: center;
   text-wrap: nowrap;
   background: rgba(33, 33, 33, 1);
@@ -63,7 +63,8 @@
   font-size: 20px;
   line-height: 24px;
   font-weight: 500;
-  left: 0px;
+  bottom: -35px;
+  left: 109px;
 }
 
 .modal__close-btn {
@@ -81,16 +82,15 @@
 
 .modal__close-btn_type_preview {
   background: transparent url(../images/Close\ Icon\ 2.svg);
-  position: relative;
+  position: absolute;
   padding: 0;
-  margin: 0 auto;
-  top: 40px;
-  left: 750px;
+  margin: 0;
+  top: 0px;
+  left: 640px;
   opacity: 1;
   height: 40px;
   width: 40px;
 }
-
 .modal__close-btn:hover {
   opacity: 1;
   cursor: pointer;

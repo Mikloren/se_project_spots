@@ -53,6 +53,7 @@
 .card__like-btn_liked {
   background-image: url("../images/State=Liked.svg");
   opacity: 1;
+  mix-blend-mode: multiply;
 }
 
 .card__like-btn_liked:hover {
@@ -92,5 +93,10 @@
 
   .card__like-btn {
     padding-right: 20px;
+  }
+
+  .card__delete-btn {
+    top: 10px;
+    left: 246px;
   }
 }
