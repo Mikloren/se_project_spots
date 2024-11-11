@@ -64,7 +64,7 @@
   line-height: 24px;
   font-weight: 500;
   bottom: -35px;
-  left: 109px;
+  left: 57px;
 }
 
 .modal__close-btn {
@@ -78,6 +78,7 @@
   border: none;
   color: rgba(33, 33, 33, 1);
   background-color: rgba(255, 255, 255, 1);
+  transition: 0.4s ease-in;
 }
 
 .modal__close-btn_type_preview {
@@ -86,14 +87,14 @@
   padding: 0;
   margin: 0;
   top: 0px;
-  left: 640px;
+  left: 690px;
   opacity: 1;
   height: 40px;
   width: 40px;
 }
 .modal__close-btn:hover {
-  opacity: 1;
   cursor: pointer;
+  background-image: url(../images/Group\ 27.svg);
 }
 
 .modal__title {
@@ -118,10 +119,16 @@
   padding: 16px 12px;
   border-radius: 8px;
   border: 1px solid rgba(33, 33, 33, 0.4);
-  color: rgba(33, 33, 33, 1);
+  color: rgba(33, 33, 33, 0.4);
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
+  transition: 0.4s ease-in;
+}
+
+.modal__input:hover {
+  cursor: pointer;
+  color: rgba(33, 33, 33, 1);
 }
 
 .modal__submit-btn {
@@ -187,12 +194,12 @@
     height: 27px;
     font-size: 16px;
     line-height: 19.2px;
-    top: 0;
+    top: 430px;
     left: 0px;
   }
 
   .modal__close-btn_type_preview {
-    top: 0;
+    top: -40px;
     left: 248px;
   }
 }
