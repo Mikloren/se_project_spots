@@ -1,17 +1,17 @@
 const showInputError = (formEl, inputEl, errorMsg) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = errorMsg;
-  inputEl.classList.add("modal__input_type_error");
+  inputEl.classList.add(".modal__input_type_error");
 };
 
 const hideInputError = (formEl, inputEl) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = "";
-  inputEl.classList.remove("modal__input_type_error");
+  inputEl.classList.remove(".modal__input_type_error");
 };
 
 const checkInputValidity = (formEl, inputEl) => {
-  if (!inputElement.validity.valid) {
+  if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, inputEl.validationMessage);
   } else {
     hideInputError(formEl, inputEl);
@@ -29,13 +29,13 @@ const toggleButtonState = (inputList, buttonElement) => {
     disableButton(buttonElement);
   } else {
     buttonElement.disabled = false;
-    buttonElement.classList.remove("modal__submit-btn_type_disabled");
+    buttonElement.classList.remove(".modal__submit-btn_type_disabled");
   }
 };
 
 const disableButton = (buttonElement) => {
   buttonElement.disabled = true;
-  buttonElement.classList.add("modal__submit-btn_type_disabled");
+  buttonElement.classList.add(".modal__submit-btn_type_disabled");
 };
 
 const resetValidation = (formEl, inputList) => {
@@ -45,8 +45,8 @@ const resetValidation = (formEl, inputList) => {
 };
 
 const setEventListener = (formEl) => {
-  const inputList = Array.from(formEl.querySelectorAll("modal__input"));
-  const buttonElement = formEl.querySelector("modal__submit-btn");
+  const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
+  const buttonElement = formEl.querySelector(".modal__submit-btn");
 
   toggleButtonState(inputList, buttonElement);
 
@@ -59,7 +59,7 @@ const setEventListener = (formEl) => {
 };
 
 const enableValidation = () => {
-  const formList = document.querySelectorAll("modal__form");
+  const formList = document.querySelectorAll(".modal__form");
   formList.forEach((formEl) => {
     setEventListener(formEl);
   });
