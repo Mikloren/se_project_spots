@@ -55,14 +55,18 @@ const cardsList = document.querySelector(".cards__list");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", closeModalEsc);
-  modal.removeEventListener("keydown", closedModal);
+  requestAnimationFrame(() => {
+    document.addEventListener("keydown", closeModalEsc);
+    modal.addEventListener("keydown", closedModal);
+  });
 }
 
 function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.addEventListener("keydown", closeModalEsc);
-  modal.removeEventListener("keydown", closedModal);
+  if (modal) {
+    modal.classList.remove("modal_opened");
+    document.removeEventListener("keydown", closeModalEsc);
+    modal.removeEventListener("keydown", closedModal);
+  }
 }
 
 function closedModal(evt) {
