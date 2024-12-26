@@ -57,7 +57,7 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
   requestAnimationFrame(() => {
     document.addEventListener("keydown", closeModalEsc);
-    modal.addEventListener("keydown", closedModal);
+    modal.addEventListener("mousedown", handleOveraly);
   });
 }
 
@@ -65,11 +65,11 @@ function closeModal(modal) {
   if (modal) {
     modal.classList.remove("modal_opened");
     document.removeEventListener("keydown", closeModalEsc);
-    modal.removeEventListener("keydown", closedModal);
+    modal.removeEventListener("keydown", handleOveraly);
   }
 }
 
-function closedModal(evt) {
+function handleOveraly(evt) {
   if (evt.target.classList.contains("modal")) {
     closeModal(evt.target);
   }
