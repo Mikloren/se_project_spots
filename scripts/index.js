@@ -89,6 +89,11 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
+function disableButton(button) {
+  button.disabled = true;
+  button.classList.add(".modal__submit-btn_type_disabled");
+}
+
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
@@ -133,10 +138,7 @@ function getCardElement(data) {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
-  resetValidation(editFormElement, [
-    editModalNameInput,
-    editModalDescriptionInput,
-  ]);
+  resetValidation(editFormElement, config);
   openModal(editModal);
 });
 
