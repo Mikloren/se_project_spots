@@ -2,8 +2,8 @@ const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitBtnSelector: ".modal__submit-btn",
-  inactiveBtnSelector: ".modal__submit-btn_type_disabled",
-  errorClass: ".modal__input_type_error",
+  inactiveBtnSelector: "modal__submit-btn_type_disabled",
+  errorClass: "modal__input_type_error",
 };
 
 const showInputError = (formEl, inputEl, errorMsg, options) => {

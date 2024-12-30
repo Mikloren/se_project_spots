@@ -65,7 +65,7 @@ function closeModal(modal) {
   if (modal) {
     modal.classList.remove("modal_opened");
     document.removeEventListener("keydown", closeModalEsc);
-    modal.removeEventListener("keydown", handleOveraly);
+    modal.removeEventListener("mousedown", handleOveraly);
   }
 }
 
@@ -89,18 +89,17 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
-function disableButton(button) {
-  button.disabled = true;
-  button.classList.add(".modal__submit-btn_type_disabled");
-}
-
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
-  disableButton(cardSubmitBtn);
+  toggleButtonState(
+    Array.from(cardForm.querySelectorAll(config.inputSelector)),
+    cardForm.querySelector(config.submitBtnSelector),
+    config
+  );
   closeModal(cardModal);
 }
 
