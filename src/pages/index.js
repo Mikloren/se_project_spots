@@ -6,7 +6,7 @@ import {
   disableButton,
 } from "../scripts/validate.js";
 import Api from "../utils/Api.js";
-import { buttonText } from "../utils/Text.js";
+import { setButtonText } from "../utils/Text.js";
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -152,7 +152,7 @@ function handleLike(event, id, isLiked) {
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
-  buttonText(submitBtn, true, "Delete", "Deleting...");
+  setButtonText(submitBtn, true, "Delete", "Deleting...");
   api
     .deleteCard(selectedCardId)
     .then(() => {
@@ -161,7 +161,7 @@ function handleDeleteSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      buttonText(submitBtn, false, "Delete", "Deleting");
+      setButtonText(submitBtn, false, "Delete", "Deleting");
     });
 }
 
@@ -174,7 +174,7 @@ function handleDeleteCard(cardElement, cardId) {
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
-  buttonText(submitBtn, true);
+  setButtonText(submitBtn, true);
   api
     .editUserInfo({
       name: editModalNameInput.value,
@@ -188,14 +188,14 @@ function handleEditFormSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      buttonText(submitBtn, false, "Saving...", "Save");
+      setButtonText(submitBtn, false);
     });
 }
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
-  buttonText(submitBtn, true, "Saving...", "Save");
+  setButtonText(submitBtn, true);
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   api
     .addCard(inputValues)
@@ -203,8 +203,6 @@ function handleAddCardSubmit(evt) {
       const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
       disableButton(cardSubmitBtn, config);
-      cardNameInput.value = "";
-      cardLinkInput.value = "";
       evt.target.reset();
       closeModal(cardModal);
     })
@@ -214,7 +212,7 @@ function handleAddCardSubmit(evt) {
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
-  buttonText(submitBtn, true, "Saving...", "Save");
+  setButtonText(submitBtn, true);
   avatarSubmitBtn.disabled = true;
   api
     .editAvatarInfo(avatarLinkInput.value)
@@ -226,21 +224,12 @@ function handleAvatarSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      buttonText(submitBtn, false);
+      setButtonText(submitBtn, false);
     });
 }
 
 avatarModalBtn.addEventListener("click", () => {
-  avatarLinkInput.value = "";
-  resetValidation(avatarForm, [avatarLinkInput], {
-    inactiveBtnSelector: "modal__submit-btn_type_disabled",
-    errorClass: "modal__input_type_error",
-  });
   openModal(avatarModal);
-});
-
-avatarModalCloseBtn.addEventListener("click", () => {
-  closeModal(avatarModal);
 });
 
 avatarForm.addEventListener("submit", handleAvatarSubmit);
