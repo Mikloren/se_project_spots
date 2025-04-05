@@ -206,7 +206,10 @@ function handleAddCardSubmit(evt) {
       evt.target.reset();
       closeModal(cardModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(submitBtn, false);
+    });
 }
 
 function handleAvatarSubmit(evt) {
